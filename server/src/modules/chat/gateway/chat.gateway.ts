@@ -12,11 +12,7 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-@WebSocketGateway({
-  cors: {
-    origin: '*',
-  },
-})
+@WebSocketGateway()
 export class ChatGateway {
   @WebSocketServer()
   server: Server;

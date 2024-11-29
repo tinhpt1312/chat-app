@@ -20,7 +20,6 @@ export abstract class Timestamp {
   @Column('bigint', {
     name: 'created_by',
     nullable: true,
-    unique: false,
   })
   createdById!: string | null;
 
@@ -28,7 +27,7 @@ export abstract class Timestamp {
   @JoinColumn({
     name: 'created_by',
     referencedColumnName: 'id',
-    foreignKeyConstraintName: 'fk_created_by',
+    foreignKeyConstraintName: 'fk_timestamp_created_by',
   })
   createdBy!: User | null;
 
@@ -60,4 +59,12 @@ export abstract class Timestamp {
 
   @Column('bigint', { name: 'deleted_by', nullable: true })
   deletedById?: string | null;
+
+  @ManyToOne(() => User)
+  @JoinColumn({
+    name: 'deleted_by',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_timestamp_deleted_by',
+  })
+  deletedBy?: User | null;
 }
