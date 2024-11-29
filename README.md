@@ -2,7 +2,11 @@
 
 Real-time messaging application with comprehensive features for both web and mobile.
 
-First: checkout branch dev
+Note: My app are all in dev branch 
+```
+git checkout dev
+git pull
+```
 
 ## Key Features
 
