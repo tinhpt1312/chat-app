@@ -37,12 +37,13 @@ export class User {
     type: 'varchar',
     length: 255,
     name: 'password',
+    nullable: true,
   })
   password!: string;
 
   @Column({
     type: 'varchar',
-    length: 50,
+    length: 255,
     name: 'avatar',
     nullable: true,
   })
